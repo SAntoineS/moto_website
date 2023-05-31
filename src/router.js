@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router/dist/vue-router.esm-bundler'
+import {createRouter, createWebHistory} from 'vue-router/dist/vue-router.esm-bundler'
 
 export default () => createRouter({
     history: createWebHistory(),
     routes: [
         {
             path: '/',
-            redirect: 'home'
+            redirect: 'welcome'
         },
         {
             path: '/home',
@@ -18,10 +18,15 @@ export default () => createRouter({
             component: () => import('./components/Welcome.vue')
         },
         {
-            path: '/register',
-            name: 'register',
-            component: ()=> import('./components/Register.vue')
+            path: "/:pathMatch(.*)*",
+            name: '404NotFound',
+            component: () => import('./components/404.vue')
         },
+        {
+            path: "/:pathMatch(.*)",
+            name: '404BadNotFound',
+            component: () => import('./components/404.vue')
+        }
 
     ]
 })

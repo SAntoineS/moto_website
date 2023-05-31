@@ -9,10 +9,15 @@
 
 <script>
 import Footer from "./components/PageFormats/Footer.vue";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+
+
+/*import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';*/
 
 export default {
   name: "App",
-  components: {Footer}
+  components: {FontAwesomeIcon, Footer},
 }
 </script>
 
