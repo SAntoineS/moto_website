@@ -18,18 +18,41 @@ import {fass} from '@fortawesome/sharp-solid-svg-icons';
 
 /* add icons to the library */
 library.add(fas, far, fab, fal, fat, fad, fass)
-import createRouter from './router'
-
 
 import 'gitart-vue-dialog/dist/style.css'
 import { GDialog } from 'gitart-vue-dialog'
 import { plugin as dialogPlugin } from 'gitart-vue-dialog'
 
-import { toast } from 'vue3-toastify';
-import 'vue3-toastify/dist/index.css';
+import { initializeApp } from "firebase/app";
+import router from "./router";
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later,© measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyCjX0BXq8RV8jCCA6O3ROT9noPE7DJ_V7A",
+    authDomain: "moto-website-50171.firebaseapp.com",
+    projectId: "moto-website-50171",
+    storageBucket: "moto-website-50171.appspot.com",
+    messagingSenderId: "893206587571",
+    appId: "1:893206587571:web:2d933a700f75e595d2a8c6",
+    measurementId: "G-Z7SSN33J6B",
+    databaseURL: "https://moto-website-50171-default-rtdb.europe-west1.firebasedatabase.app/"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
+import Toast from "vue-toastification";
+// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
+
+const options = {
+    // You can set your default options here
+};
 
 createApp(App)
+    .use(Toast, options)
     .use(dialogPlugin)
     .component('GDialog', GDialog)
-    .use(createRouter())
+    .use(router)
     .mount('#app')

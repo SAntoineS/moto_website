@@ -2,7 +2,7 @@
   <div class="flex flex-col w-full">
     <div id="firstSec" class="w-full flex justify-center items-center h-screen">
       <div class="flex flex-col justify-center items-center pb-10">
-        <span class="select-none text-[#454545] text-[9rem] font-thin">Welcome</span>
+        <span class="select-none text-[#454545] text-9xl font-thin">Welcome</span>
         <div
             class="flex flex-col items-center justify-center text-center select-none text-[#454545] font-light leading-relaxed gap-5">
           <p class="">
@@ -13,7 +13,8 @@
           <span>Let's make every journey unforgettable.</span>
           <div class="flex flex-col gap-5">
             <button @click="registerIsVisible = true"
-                    class="focus:outline-none border border-[#454545] p-5 hover:bg-[#454545] hover:text-white">Start
+                    class="rounded-xl focus:outline-none border border-[#454545] p-3 bg-[#454545] text-white hover:bg-[#303030]">
+              Start
               your
               ride with us
               today!
@@ -24,8 +25,8 @@
         </div>
       </div>
     </div>
-    <div class="w-full flex flex-col justify-center items-center h-screen gap-10">
-      <div class="flex items-start pb-10 justify-around w-full flex-wrap">
+    <div class="w-full flex flex-col justify-center items-center h-auto py-20 gap-10">
+      <div class="flex items-start justify-around w-full flex-wrap gap-10">
         <div class="flex flex-col items-center w-96 text-justify gap-5">
           <font-awesome-icon :icon="['fal', 'map-location-dot']" style="color: #454545;" class="text-4xl"/>
           <span class="select-none text-[#454545] text-5xl font-thin text-center">Plan Rides</span>
@@ -52,7 +53,8 @@
       </div>
       <div class="flex flex-col gap-5">
         <button @click="registerIsVisible = true"
-                class="focus:outline-none border border-[#454545] p-5 hover:bg-[#454545] hover:text-white">Start your
+                class="rounded-xl focus:outline-none border border-[#454545] p-3 bg-[#454545] text-white hover:bg-[#303030]">
+          Start your
           ride with us
           today!
         </button>
@@ -61,10 +63,10 @@
       </div>
 
     </div>
-    <GDialog v-model="registerIsVisible" width="750">
+    <GDialog v-model="registerIsVisible" width="500">
       <Register></Register>
     </GDialog>
-    <GDialog v-model="loginIsVisible" width="750">
+    <GDialog v-model="loginIsVisible" width="500">
       <Login></Login>
     </GDialog>
   </div>
@@ -72,8 +74,8 @@
 
 <script>
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-import Register from "./Register.vue";
-import Login from "./Login.vue";
+import Register from "./Authentication/Register.vue";
+import Login from "./Authentication/Login.vue";
 
 export default {
   name: "Welcome",
